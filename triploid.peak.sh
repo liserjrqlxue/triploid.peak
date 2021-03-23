@@ -1,5 +1,5 @@
 #!/bin/env bash
-set -euo failpipe
+set -euo pipefail
 
 bin=$(dirname $0)
 
