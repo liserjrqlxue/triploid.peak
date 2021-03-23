@@ -13,7 +13,7 @@ read.table(
 a <- a[!is.na(a$A.Ratio),]
 a$A.Ratio <- as.numeric(a$A.Ratio)
 a[a$X.Chr %in% 1:22 & a$Zygosity %in% c("het-ref"),] -> het
-density(het$A.Ratio) -> dens
+density(na.omit(het$A.Ratio)) -> dens
 peak_value = max(dens$y)
 peak = dens$x[dens$y == max(dens$y)]
 peak1 = dens$x[dens$y == max(dens$y[dens$x <= 0.5])]
